@@ -1,8 +1,11 @@
 import typer
 from dotenv import load_dotenv
+
 from bot.logging_config import setup_logging
 from bot.validators import validate_inputs
 from bot.orders import execute_order
+from bot.config import ensure_env_configured
+
 from rich.console import Console
 from rich.table import Table
 from rich.panel import Panel
@@ -14,6 +17,7 @@ setup_logging()
 app = typer.Typer(help="Interactive Binance Futures Testnet Trading CLI Bot")
 console = Console()
 
+#Improved CLI for better UX with Question&Answer format
 def run_interactive_wizard():
     
     console.clear()
@@ -97,6 +101,9 @@ def place_order(
     price: float = typer.Option(None, "--price", "-p", help="Target entry price (Required for LIMIT and STOP_LIMIT orders)"),
     stop_price: float = typer.Option(None, "--stop-price", "-x", help="Trigger activation threshold price (Required for STOP_LIMIT orders)")
 ):
+    
+    #Calling the .env Checker
+    ensure_env_configured()
 
     if symbol is None or side is None or order_type is None or quantity is None:
         symbol, side, order_type, quantity, price, stop_price = run_interactive_wizard()
