@@ -23,6 +23,7 @@ This application features robust input pre-flight validation, centralized thread
 
 The architecture relies strictly on the separation of concerns paradigm, isolating the representation layer from the transaction orchestration and the underlying networking protocols:
 
+```text
 trading_bot/
 │
 ├── bot/
@@ -36,6 +37,7 @@ trading_bot/
 ├── bot.log                 # Generated transaction receipts log file 
 ├── .gitignore              # Shields secret operational variables from version tracking
 └── requirements.txt        # Isolated minimalist dependency production matrix
+```
 
 ---
 
