@@ -74,13 +74,30 @@ python -m venv trading_bot
 trading_bot\Scripts\activate
 
 # On macOS / Linux:
-source trading_bot/bin/
+source trading_bot/bin/activate
 ```
 
 ## 3. Install Minimalist Dependencies
 
 ```
 pip install -r requirements.txt
+```
+
+---
+
+# 🔐 Environment Configuration (.env)
+
+This application includes a zero-configuration onboarding mechanism. You do not need to manually create or manage a configuration file before your first launch.
+
+### Automated Setup
+When you execute `python cli.py` for the first time without flags, the core engine (`bot/config.py`) intercepts the execution path, detects the missing variables, and guides you through a secure terminal prompt to populate your keys. It then writes a local `.env` file automatically.
+
+### Manual Setup Fallback
+If you prefer to configure the environment file manually before launching the script, create a file named `.env` in the root directory and populate it with your Binance Futures Testnet credentials:
+
+```env
+BINANCE_API_KEY=your_actual_testnet_api_key_here
+BINANCE_API_SECRET=your_actual_testnet_api_secret_here
 ```
 
 ---
@@ -149,3 +166,10 @@ All transaction states, payloads, and underlying failures are written down withi
 2026-06-09 11:50:04 - INFO - Sending API request payload: {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': 0.0001}
 2026-06-09 11:50:04 - ERROR - Binance API Error: Status 400 - Filter failure: MIN_NOTIONAL
 ```
+
+---
+
+# 👤 Author
+
+- **Name**: Diprajit Chakraborty
+- **Role**: Full-Stack Web & Web3 Developer
