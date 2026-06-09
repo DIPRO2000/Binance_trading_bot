@@ -112,6 +112,9 @@ If you run the application with no arguments, it automatically triggers the guid
 python cli.py
 ```
 
+### Visual Demo
+![Bot Execution Table](assets/bot_terminal.png)
+
 ## Mode B: Developer Command-Flag Mode
 For high-speed automated testing, scripts, or advanced operators, pass structured flags directly into the entry execution script:
 
@@ -166,6 +169,9 @@ All transaction states, payloads, and underlying failures are written down withi
 2026-06-09 11:50:04 - INFO - Sending API request payload: {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': 0.0001}
 2026-06-09 11:50:04 - ERROR - Binance API Error: Status 400 - Filter failure: MIN_NOTIONAL
 ```
+
+### Visual Demo
+![Bot Logs](assets/bot.log.png)
 
 ---
 
